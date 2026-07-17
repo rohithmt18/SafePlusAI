@@ -1,0 +1,153 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.emergency-modal {
+  background: linear-gradient(160deg, #1a0a0e 0%, #0d0a1e 100%);
+  border: 1px solid rgba(255, 71, 87, 0.4);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl) var(--space-2xl);
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 0 60px rgba(255, 71, 87, 0.25), 0 20px 60px rgba(0,0,0,0.5);
+  animation: emergencyPulse 2s ease-in-out infinite;
+  text-align: center;
+}
+
+/* Header */
+.em-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.em-icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 71, 87, 0.12);
+  border: 2px solid rgba(255, 71, 87, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: emergencyPulse 1s ease-in-out infinite;
+}
+
+.em-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--emergency);
+  margin: 0;
+}
+
+.em-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+/* Countdown */
+.em-countdown-wrapper {
+  margin: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.em-countdown-number {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--emergency);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(255, 71, 87, 0.5);
+  transition: all 0.3s ease;
+}
+
+.em-countdown-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.em-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: var(--space-sm);
+}
+
+.em-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--emergency), var(--caution));
+  border-radius: 2px;
+  transition: width 1s linear;
+  box-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+}
+
+/* Info */
+.em-info {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.em-info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.em-info-row svg { flex-shrink: 0; color: var(--text-muted); }
+
+/* Actions */
+.em-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.em-cancel-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px !important;
+  font-size: 15px !important;
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(46, 213, 115, 0.4) !important;
+  color: var(--safe) !important;
+  font-weight: 700 !important;
+}
+
+.em-cancel-btn:hover {
+  background: rgba(46, 213, 115, 0.1) !important;
+  border-color: var(--safe) !important;
+}
+
+.em-auto-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+}

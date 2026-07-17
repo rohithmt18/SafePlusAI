@@ -1,0 +1,223 @@
+.monitor-page { padding-top: var(--space-xl); }
+
+.monitor-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.monitor-actions { display: flex; gap: var(--space-sm); flex-shrink: 0; }
+
+.monitor-alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  margin-bottom: var(--space-lg);
+}
+
+.monitor-alert--error {
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  color: #ff7b88;
+}
+
+.monitor-alert--warn {
+  background: rgba(255, 165, 2, 0.08);
+  border: 1px solid rgba(255, 165, 2, 0.3);
+  color: var(--caution);
+}
+
+/* Layout */
+.monitor-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Gauge col */
+.monitor-gauge-col { position: sticky; top: 80px; }
+.monitor-gauge-card { padding: var(--space-lg); }
+
+.monitor-breakdown {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.monitor-bd-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.monitor-bd-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  width: 44px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.monitor-bd-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.monitor-bd-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.monitor-bd-val {
+  font-size: 11px;
+  font-weight: 600;
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+  transition: color 0.5s ease;
+}
+
+/* Signals col */
+.monitor-signals-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Speech */
+.monitor-speech { display: flex; flex-direction: column; gap: var(--space-sm); }
+.monitor-transcript {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-style: italic;
+  background: rgba(255,255,255,0.03);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--brand);
+  word-break: break-word;
+}
+.monitor-placeholder { font-size: 12px; color: var(--text-muted); font-style: italic; }
+.monitor-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+.monitor-keyword {
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.monitor-keyword--critical { background: rgba(255,71,87,0.15); color: var(--emergency); border: 1px solid rgba(255,71,87,0.3); }
+.monitor-keyword--high { background: rgba(255,107,53,0.15); color: var(--danger); border: 1px solid rgba(255,107,53,0.3); }
+.monitor-keyword--medium { background: rgba(255,165,2,0.15); color: var(--caution); border: 1px solid rgba(255,165,2,0.3); }
+.monitor-keyword--low { background: rgba(255,255,255,0.05); color: var(--text-secondary); border: 1px solid var(--border); }
+
+/* Audio */
+.monitor-audio { display: flex; flex-direction: column; gap: var(--space-sm); }
+.monitor-audio-header { display: flex; justify-content: space-between; align-items: center; }
+.monitor-audio-label { font-size: 12px; color: var(--text-muted); }
+.monitor-audio-type {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.monitor-audio-type--scream { color: var(--emergency); }
+.monitor-audio-type--loud_sustained { color: var(--danger); }
+.monitor-audio-type--loud { color: var(--caution); }
+.monitor-audio-type--normal { color: var(--safe); }
+.monitor-audio-type--silence { color: var(--text-muted); }
+.monitor-audio-pct { font-size: 11px; color: var(--text-muted); text-align: right; }
+
+/* Volume bar */
+.volume-bar {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+  align-items: flex-end;
+}
+.volume-segment {
+  flex: 1;
+  border-radius: 1px;
+  height: 100%;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Emotion */
+.monitor-emotion { display: flex; flex-direction: column; gap: var(--space-sm); }
+.emotion-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  align-self: flex-start;
+}
+.monitor-emotion-stats { display: flex; gap: var(--space-lg); }
+.monitor-emotion-stat { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--text-muted); }
+.monitor-emotion-val { font-weight: 700; color: var(--text-primary); font-size: 14px; }
+
+/* GPS */
+.monitor-gps { display: flex; flex-direction: column; gap: 4px; }
+.monitor-gps-address { font-size: 13px; color: var(--text-primary); font-weight: 500; }
+.monitor-gps-coords { font-size: 11px; color: var(--text-muted); font-family: monospace; }
+.monitor-gps-acc { color: var(--text-muted); }
+.monitor-gps-night { font-size: 12px; color: var(--caution); margin-top: 4px; }
+
+/* Motion */
+.monitor-motion { display: flex; flex-direction: column; gap: 4px; }
+.monitor-motion-type { font-size: 13px; font-weight: 600; }
+.monitor-motion-delta { font-size: 11px; color: var(--text-muted); }
+
+@media (max-width: 1024px) {
+  .monitor-layout { grid-template-columns: 1fr; }
+  .monitor-gauge-col { position: static; }
+}
+
+/* Leaflet Map */
+.gps-map {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-sm);
+  z-index: 1;
+  border: 1px solid var(--border);
+}
+
+.gps-pulse-marker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.gps-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #6c63ff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(108, 99, 255, 0.4);
+  animation: gps-pulse 2s infinite;
+}
+
+@keyframes gps-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(108, 99, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
