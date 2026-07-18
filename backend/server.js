@@ -17,13 +17,9 @@ async function startServer() {
 }
 
 // ── Middleware ──────────────────────────────────────────────────
-const cors = require("cors");
 
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://safeplus-ai.netlify.app"
-  ],
+  origin: true,
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
