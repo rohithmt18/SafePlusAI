@@ -3,7 +3,7 @@
  * Base URL: http://localhost:5000/api
  */
 
-const BASE_URL = 'http://localhost:5001/api';
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 const TOKEN_KEY = 'safeplusai_token';
 
 export function getToken() {
