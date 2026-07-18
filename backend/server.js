@@ -16,8 +16,6 @@ async function startServer() {
   });
 }
 
-startServer();
-
 // ── Middleware ──────────────────────────────────────────────────
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
@@ -46,12 +44,18 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// ── 404 ──────────────────────────────────────────────────────────
-app.use((req, res) => res.status(404).json({ error: 'Route not found' }));
-
-// ── Error handler ────────────────────────────────────────────────
-app.use((err, req, res, next) => {
-  console.error('Server error:', err);
-  res.status(500).json({ error: err.message || 'Internal server error' });
+// 404
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
 });
 
+// Error handler
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({
+    error: err.message || "Internal server error"
+  });
+});
+
+// START SERVER LAST
+startServer();
