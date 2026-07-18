@@ -3,7 +3,7 @@
  * Base URL: http://localhost:5000/api
  */
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'http://localhost:5001/api';
 const TOKEN_KEY = 'safeplusai_token';
 
 export function getToken() {
@@ -25,11 +25,13 @@ async function request(method, path, body, requiresAuth = true) {
     if (token) headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const res = await fetch(`${BASE_URL}${path}`, {
-    method,
-    headers,
-    body: body ? JSON.stringify(body) : undefined,
-  });
+  const options = { method, headers };
+  // Only add body if it exists, as GET/HEAD requests will throw an error if body is present even if undefined
+  if (body !== undefined && body !== null) {
+    options.body = JSON.stringify(body);
+  }
+
+  const res = await fetch(`${BASE_URL}${path}`, options);
 
   const data = await res.json().catch(() => ({}));
 
