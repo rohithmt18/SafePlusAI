@@ -4,6 +4,12 @@ SafeplusAI is an AI-powered personal safety platform designed to automatically i
 
 Unlike traditional safety applications that depend entirely on manual triggers, SafeplusAI uses a multi-modal context engine to analyze environmental signals in real time.
 
+## Live Demo
+
+🌐 Frontend: https://safeplus-ai.netlify.app
+
+⚙️ Backend API: https://safeplusai-backend.onrender.com/api
+
 ## 🌟 Key Features
 
 * **AI Risk Scoring Engine:** Analyzes multiple signals (Speech, Audio Events, Voice Emotion, GPS, Device Motion, Time of Day) to calculate a live risk score (0-100).
