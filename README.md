@@ -93,7 +93,7 @@ npm start
 # Runs on http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the app!
+Open https://safeplus-ai.netlify.app/ in your browser to view the app!
 
 ## 📸 Screenshots & Usage
 1. **Create an Account:** The system uses JWT for secure authentication.
